@@ -45,5 +45,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+<string>Questa app usa il Bluetooth per scansionare dispositivi vicini</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>Questa app usa il Bluetooth per comunicare con dispositivi esterni</string>
 </dict>
 </plist>

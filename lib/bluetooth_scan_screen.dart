@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 class BluetoothScanScreen extends StatefulWidget {
   const BluetoothScanScreen({super.key});
@@ -9,15 +9,18 @@ class BluetoothScanScreen extends StatefulWidget {
 }
 
 class _BluetoothScanScreenState extends State<BluetoothScanScreen> {
-  final FlutterBlue flutterBlue = FlutterBlue.instance;
   List<ScanResult> scanResults = [];
 
-  void _startScan() {
-    setState(() {
-      scanResults.clear();
-    });
-    flutterBlue.startScan(timeout: const Duration(seconds: 4));
-    flutterBlue.scanResults.listen((results) {
+  void _startScan() async {
+    FlutterBluePlus flutterBlue = FlutterBluePlus();
+
+    // scansiona
+    // Start scanning
+    /* await flutterBlue.startScan(
+        timeout: Duration(seconds: 4), androidUsesFineLocation: true); */
+
+    // risultati scansione
+    FlutterBluePlus.scanResults.listen((results) {
       setState(() {
         scanResults = results;
       });
