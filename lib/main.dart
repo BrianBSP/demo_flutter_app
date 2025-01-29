@@ -1,3 +1,4 @@
+import 'package:demo_flutter_app/mqtt_subscribe_screen.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'mqtt_publish_screen.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       home: const HomeScreen(),
       routes: {
         '/publish': (context) => const MqttPublishScreen(),
+        '/subscribe': (context) => const MqttSubscribeScreen(),
       },
     );
   }

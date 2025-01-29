@@ -16,7 +16,10 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, '/publish'),
               child: const Text('Vai a Schermata 2'),
-            )
+            ),
+            ElevatedButton(
+                onPressed: () => Navigator.pushNamed(context, '/subscribe'),
+                child: const Text('Vai a schermata 3'))
           ],
         ),
       ),

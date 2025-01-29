@@ -17,10 +17,17 @@ class _MqttPublishScreenState extends State<MqttPublishScreen> {
   MqttServerClient? client;
 
   void _publishMessage() async {
-    client = MqttServerClient(broker, '');
+    client = MqttServerClient(
+        broker, 'flutter_client_${DateTime.now().millisecondsSinceEpoch}');
     client!.port = port;
+    client!.setProtocolV311();
     client!.logging(on: false);
     try {
+      client!.connectionMessage = MqttConnectMessage()
+          .withClientIdentifier(
+              'flutter_client_${DateTime.now().millisecondsSinceEpoch}')
+          .startClean();
+      ;
       await client!.connect();
       final builder = MqttClientPayloadBuilder();
       builder.addString(_messageController.text);
