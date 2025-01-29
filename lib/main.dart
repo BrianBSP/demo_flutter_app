@@ -1,3 +1,4 @@
+import 'package:demo_flutter_app/bluetooth_scan_screen.dart';
 import 'package:demo_flutter_app/mqtt_subscribe_screen.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/publish': (context) => const MqttPublishScreen(),
         '/subscribe': (context) => const MqttSubscribeScreen(),
+        '/bluetooth': (context) => const BluetoothScanScreen(),
       },
     );
   }

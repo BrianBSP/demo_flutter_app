@@ -27,7 +27,6 @@ class _MqttPublishScreenState extends State<MqttPublishScreen> {
           .withClientIdentifier(
               'flutter_client_${DateTime.now().millisecondsSinceEpoch}')
           .startClean();
-      ;
       await client!.connect();
       final builder = MqttClientPayloadBuilder();
       builder.addString(_messageController.text);
